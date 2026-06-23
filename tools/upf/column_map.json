@@ -1,0 +1,7 @@
+{
+  "pd_name": "pd_name",
+  "target_file": "sys_name",
+  "iso_enable": "iso使能",
+  "signal_name": "需要插入iso的信号名",
+  "iso_value": "iso tie 0/1"
+}

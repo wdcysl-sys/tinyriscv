@@ -1,0 +1,39 @@
+## PD_A 内部需要插入iso被tie 0和1的信号； sys_name: spi
+set_isolation_control iso_b_to_a \
+    -domain PD_A \
+    -isolation_signal a_iso \
+    -isolation_sense high \
+    -location parent
+
+set_isolation  iso_b_to_a \
+    -domain PD_A \
+    -clamp_value 1 \
+    -elements {
+        rst}
+
+set_isolation iso_b_to_a \
+    -domain PD_A \
+    -clamp_value 0 \
+    -elements {
+        clk/
+        we_i}
+
+
+## PD_B 内部需要插入iso被tie 0和1的信号 ； sys_name: timer
+set_isolation_control iso_a_to_b \
+    -domain PD_B \
+    -isolation_signal b_iso \
+    -isolation_sense high \
+    -location parent
+
+set_isolation iso_a_to_b \
+    -domain PD_B \
+    -clamp_value 1 \
+    -elements {
+        rst}
+
+set_isolation iso_a_to_b \
+    -domain PD_B \
+    -clamp_value 0 \
+    -elements {
+        clk}

@@ -115,4 +115,12 @@ module timer(
         end
     end
 
+    // === UPF ISO signals inserted by upf_tool on 2026-06-23 12:55:25 ===
+    // UPF ISO: PD_A, clamp=1
+    assign rst_fpga = a_iso ? 1'b1 : rst;
+    // UPF ISO: PD_A, clamp=0
+    assign clk_fpga = a_iso ? 1'b0 : clk;
+    // UPF ISO: PD_A, clamp=0
+    assign we_i_fpga = a_iso ? 1'b0 : we_i;
+    // === End UPF ISO signals ===
 endmodule
